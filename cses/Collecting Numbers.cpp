@@ -14,22 +14,22 @@ typedef vector<vi> vvi;
 #define lowbit(x) ((x) & -(x))
 const ll M = 1e9 + 7;
 
-int n;
-vector<ll> v;
+int n, ans;
+vi v;
 
 int main() {
     IOS;
     cin >> n;
-    v.resize(n);
-    for (ll& i : v)
-        cin >> i;
-    sort(v.begin(), v.end());
-
-    ll sum = 0;
-    for (ll& i : v) {
-        if (i > sum + 1)
-            break;
-        sum += i;
+    v.resize(n + 1);
+    for (int i = 1; i <= n; i++) {
+        int x;
+        cin >> x;
+        v[x] = i;
     }
-    cout << sum + 1;
+    int prev = 0;
+    for (int i = 1; i <= n; i++) {
+        if (v[i] < prev) ans++;
+        prev = v[i];
+    }
+    cout << ans + 1;
 }

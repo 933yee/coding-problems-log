@@ -3,3 +3,6 @@ Two Knights
 Tower of Hanoi
 Digit Queries
 Grid Paths
+
+Missing Coin Sum
+Collecting Numbers
