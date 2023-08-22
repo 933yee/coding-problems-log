@@ -1,0 +1,5 @@
+Repetitions
+Two Knights
+Tower of Hanoi
+Digit Queries
+Grid Paths
