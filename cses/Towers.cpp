@@ -1,5 +1,3 @@
-// 檢查連續整數的有沒有 inversion 就好
-
 #include <bits/stdc++.h>
 using namespace std;
 typedef pair<int, int> pii;
@@ -16,22 +14,19 @@ typedef vector<vi> vvi;
 #define lowbit(x) ((x) & -(x))
 const ll M = 1e9 + 7;
 
-int n, ans;
-vi v;
+int n;
+multiset<int> st;
 
 int main() {
     IOS;
     cin >> n;
-    v.resize(n + 1);
-    for (int i = 1; i <= n; i++) {
+    while (n--) {
         int x;
         cin >> x;
-        v[x] = i;
+        auto p = st.upper_bound(x);
+        if (p != st.end())
+            st.erase(p);
+        st.insert(x);
     }
-    int prev = 0;
-    for (int i = 1; i <= n; i++) {
-        if (v[i] < prev) ans++;
-        prev = v[i];
-    }
-    cout << ans + 1;
+    cout << st.size();
 }

@@ -6,3 +6,5 @@ Grid Paths
 
 Missing Coin Sum
 Collecting Numbers
+Collecting Numbers II
+*Josephus Problem II
