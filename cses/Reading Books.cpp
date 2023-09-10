@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+typedef pair<int, int> pii;
+typedef vector<int> vi;
+typedef vector<vi> vvi;
+#define F first
+#define S second
+#define PB push_back
+#define MP make_pair
+#define IOS                       \
+    ios_base::sync_with_stdio(0); \
+    cin.tie(0);
+#define lowbit(x) ((x) & -(x))
+const ll M = 1e9 + 7;
+
+int n;
+ll sum = 0;
+vi v;
+
+int main() {
+    IOS;
+    cin >> n;
+    v.resize(n);
+    for (int& i : v) {
+        cin >> i;
+        sum += i;
+    }
+
+    sort(v.begin(), v.end());
+    cout << max(sum, (ll)v.back() * 2);
+}
